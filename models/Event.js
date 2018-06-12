@@ -12,7 +12,7 @@ var EventSchema = new Schema({
     required: true
   },
   // `link` is required and of type String
-  link: {
+  img: {
     type: String,
     required: true
   },

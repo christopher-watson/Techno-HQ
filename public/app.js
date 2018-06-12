@@ -3,7 +3,13 @@ $.getJSON("/events", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#events").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#events").append("<h3 data-id='" + data[i]._id + "'>" + data[i].title + "</h3>");
+    if(data[i].img[0] === '/'){
+      $("#events").append('<img src="https://www.residentadvisor.net' + data[i].img + '">');
+    }
+    else{
+      $("#events").append('<img src="https://pbs.twimg.com/profile_images/876409189379297280/-zjcSD8t_200x200.jpg">');
+    }
   }
 });
 

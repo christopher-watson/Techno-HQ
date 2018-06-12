@@ -74,6 +74,8 @@ body {
 
 .event-pic{
   grid-area: pic;
+  height: 100px;
+  width: 200px;
 }
 
 .notes{

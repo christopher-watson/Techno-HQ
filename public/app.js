@@ -22,18 +22,21 @@ $.getJSON("/events", function (data) {
 //  WORKING 
 $(document).on("click", "h3", function () {
   // Empty the notes from the note section
+  var eventCode = $(this).attr('data-id');
+  console.log('eventCode: ' + eventCode);
   $(".notes").empty();
   // Save the id from the p tag
-  var thisId = $(this).attr("data-id");
+  var thisID = $(this).attr('data-id');
 
   // Now make an ajax call for the Article
   $.ajax({
       method: "GET",
-      url: "/events/" + thisId
+      url: "/events/" + thisID
     })
     // With that done, add the note information to the page
     .then(function (data) {
       console.log(data);
+      if(eventCode == thisID)
         $(".notes").append("<h2>" + data.title + "</h2>");
         // An input to enter a new title
         $(".notes").append("<input id='titleinput' name='title' >");

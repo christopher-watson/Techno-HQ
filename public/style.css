@@ -1,0 +1,97 @@
+:root{
+  --red:#FF0028;
+  --opaque:#FFFFFF90;
+  --blue: #2BB2F6;
+  --grey:#99A3A3;
+  --black:#161718;
+}
+
+body {
+  background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
+  color: var(--grey);
+  font-family: 'Roboto', sans-serif;
+}
+
+#wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-areas: 
+    "header header header" 
+    ". content ."
+}
+
+#header{
+  grid-area: header;
+  justify-self: center;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  height: minmax(min-content, max-content);
+  width: 100vw;
+  background: var(--opaque);
+  font-family: 'Black Ops One', cursive;
+  color: var(--black);
+}
+
+#title{
+  font-size: 150px;
+  margin: 0;
+}
+
+#top-line{
+  margin-top: 0;
+}
+
+#events {
+  grid-area: content;
+  overflow: auto;
+  margin: 10px auto;
+}
+
+.inner-event{
+  display: grid;
+  grid-template-rows: repeat(2, min-content) 10px;
+  grid-template-columns: min-content max-content;
+  grid-template-areas:
+    "pic text"
+    ". note"
+}
+
+.event-title{
+  grid-area: text;
+  align-self: center;
+  margin-left: 10px;
+}
+
+.event-pic{
+  grid-area: pic;
+}
+
+.notes{
+  grid-area: note;
+}
+
+textarea,
+input {
+  display: block;
+  width: 100%;
+  background-color: var(--opaque);
+}
+
+input {
+  height: 36px;
+  font-size: 24px;
+}
+
+textarea {
+  height: 200px;
+  font-size: 18px;
+}

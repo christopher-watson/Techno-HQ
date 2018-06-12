@@ -35,7 +35,8 @@ body {
   margin-top: 20px;
   padding-bottom: 20px;
   height: minmax(min-content, max-content);
-  width: 100vw;
+  width: 85vw;
+  border-radius: 25px;
   background: var(--opaque);
   font-family: 'Black Ops One', cursive;
   color: var(--black);

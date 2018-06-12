@@ -81,3 +81,7 @@ $(document).on("click", "#savenote", function () {
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+$(document).on("click", "#scrape-button", function(){
+
+});
